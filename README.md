@@ -13,7 +13,7 @@ aos Requisitos Funcionais (RF) definidos e detalhados neste documento de especif
 pip install -r requirements.txt
 ```
 
-## Requisitos
+## Requisitos - Parte 1
 - [ ] RF1 - Listar todos os times da NBA agrupados por Conferência
 - [ ] RF2 - Apresentar a classificação atual dos times [Agrupados por Conferência]
 - [ ] RF3 - Apresentar o total de vitórias e derrotas do time, separados por partidas jogadas em casa (mandante) e fora de casa (visitante), conforme Tabela 2;
