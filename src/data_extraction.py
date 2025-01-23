@@ -1,4 +1,5 @@
 from nba_api.stats.static import teams
+from nba_api.stats.endpoints import leaguegamefinder
 import pandas as pd
 import os
 
@@ -62,6 +63,17 @@ def save_teams_to_csv(eastern_conference, western_conference):
     eastern_df.to_csv('data/processed/eastern_conference_teams.csv', index=False)
     western_df.to_csv('data/processed/western_conference_teams.csv', index=False)
 
+def get_team_games(team_id):
+    gamefinder = leaguegamefinder.LeagueGameFinder(team_id_nullable=team_id)
+    games = gamefinder.get_data_frames()[0]
+    return games
+
+def save_games_to_csv(team_id, games, team_name):
+    if not os.path.exists('data/raw'):
+        os.makedirs('data/raw')
+
+    games.to_csv(f'data/raw/{team_name}_games.csv', index=False)
+
 def main():
     nba_teams = get_nba_teams()
 
@@ -76,6 +88,13 @@ def main():
         print(f"ID: {team['id']}, Nome: {team['full_name']}")
 
     save_teams_to_csv(eastern_conference, western_conference)
+
+    for team in nba_teams:
+        team_id = team['id']
+        team_name = team['full_name'].replace(' ', '_')
+        games = get_team_games(team_id)
+        save_games_to_csv(team_id, games, team_name)
+        print(f"Dados de jogos do {team['full_name']} salvos em 'data/raw/{team_name}_games.csv'")
 
 if __name__ == "__main__":
     main()
