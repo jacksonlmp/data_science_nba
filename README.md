@@ -15,7 +15,7 @@ pip install -r requirements.txt
 
 ## Requisitos - Parte 1
 - [x] RF1 - Listar todos os times da NBA agrupados por Conferência
-- [ ] RF2 - Apresentar a classificação atual dos times [Agrupados por Conferência]
+- [x] RF2 - Apresentar a classificação atual dos times [Agrupados por Conferência]
 - [ ] RF3 - Apresentar o total de vitórias e derrotas do time, separados por partidas jogadas em casa (mandante) e fora de casa (visitante), conforme Tabela 2;
 - [ ] RF4 - Apresentar o total dos dados do seu time [temporada 23-24 e temporada atual], conforme Tabelas 3 e 4;
 - [ ] RF5 - Apresentar a divisão de alguns dados da Tabela 3, conforme Tabelas 4
@@ -23,8 +23,7 @@ pip install -r requirements.txt
 - [ ] RF7 - Apresentar os jogos do seu time [temporada 23-24 e temporada atual], conforme Tabela 6.
 - [ ] RF8 - Apresentar gráficos de desempenho do seu time [temporada 23-24 e temporada atual] para compor o Dashboard do projeto:
     - Gráfico de Barras Empilhado para Vitórias [Cor verde] e Derrotas [Cor vermelha].
-    - Gráfico de Barras Agrupado para Vitórias em casa [Cor verde], Vitórias fora de
-casa [Cor azul], Derrotas em casa [Cor vermelha] e Derrotas fora de casa [Cor
+    - Gráfico de Barras Agrupado para Vitórias em casa [Cor verde], Vitórias fora de casa [Cor azul], Derrotas em casa [Cor vermelha] e Derrotas fora de casa [Cor
 marrom].
     - Gráfico Histograma para exibir a frequência de vitórias e derrotas do time.
     - Gráfico de Setor [Pizza] para o percentual de para Vitórias em casa, Vitórias fora de casa, Derrotas em casa e Derrotas fora de casa.
