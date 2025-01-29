@@ -1,7 +1,10 @@
 from nba_api.stats.static import teams
 from nba_api.stats.endpoints import leaguegamefinder
+from nba_api.stats.static import players
+from nba_api.stats.endpoints import commonplayerinfo
 import pandas as pd
 import os
+import time
 
 team_conferences = {
     1610612737: 'East',  # Atlanta Hawks
@@ -73,6 +76,48 @@ def save_games_to_csv(team_id, games, team_name):
         os.makedirs('data/raw')
 
     games.to_csv(f'data/raw/{team_name}_games.csv', index=False)
+
+# Lista de nomes dos jogadores
+jogadores = [
+    "Jayson Tatum", "Derrick White", "Jaylen Brown", "Al Horford", "Marcus Smart",
+    "Robert Williams III", "Malcolm Brogdon", "Sam Hauser", "Luke Kornet", 
+    "Payton Pritchard", "Grant Williams", "Juwan Morgan", "Matisse Thybulle"
+]
+
+# Função para buscar dados de um jogador
+def buscar_dados_jogador(nome):
+    jogador = players.find_players_by_full_name(nome)
+    if jogador:
+        jogador_id = jogador[0]['id']
+        info = commonplayerinfo.CommonPlayerInfo(player_id=jogador_id).get_dict()
+        dados = info['resultSets'][0]['rowSet'][0]
+        return {
+            "Nome": nome,
+            "Altura": dados[10],  # Altura (em metros)
+            "Peso": dados[11],  # Peso (em kg)
+            "Idade": dados[6],  # Idade
+            "Experiência": dados[12],  # Anos na NBA
+            "Posição": dados[14],  # Posição
+            "Universidade": dados[8],  # Universidade
+            "Salário": dados[17] if len(dados) > 17 else 0  # Salário atual
+        }
+    return None
+
+# Criar DataFrame com os dados dos jogadores
+dados_jogadores = []
+for nome in jogadores:
+    print(f"Buscando dados para: {nome}")
+    dados = buscar_dados_jogador(nome)
+    if dados:
+        dados_jogadores.append(dados)
+    else:
+        print(f"Não foi possível encontrar dados para {nome}")
+    time.sleep(1)  # Adiciona um atraso para evitar problemas com a API
+
+# Criar e salvar o arquivo CSV
+df = pd.DataFrame(dados_jogadores)
+df.to_csv("data/players.csv", index=False)
+print("Arquivo players.csv criado com sucesso!")
 
 def main():
     nba_teams = get_nba_teams()
