@@ -31,8 +31,8 @@ marrom].
     - Gráfico de Linhas exibindo a sequência de vitórias e derrotas ao longo da temporada.
     - Gráfico de Dispersão exibindo equipes e a média de pontos marcados e sofridos durante a temporada
     - Apresente um gráfico da sua escolha para exibir os dados referentes a Tabela 5 do RF6 e a Tabela 6 do RF7.
-- [ ] RF9 – Para cada tabela e/ou requisito que exiba dados gerados pelo sistema será necessário que os dados sejam salvos em um arquivo csv.
-- [ ] RF10 – Para cada gráfico gerado pelo sistema será necessário que sejam exibidos em formato HTML e abertos no Browser.
+- [x] RF9 – Para cada tabela e/ou requisito que exiba dados gerados pelo sistema será necessário que os dados sejam salvos em um arquivo csv.
+- [x] RF10 – Para cada gráfico gerado pelo sistema será necessário que sejam exibidos em formato HTML e abertos no Browser.
 
 ## Requisitos - Parte 2
 - [x] RF1 - Apresentar os seguintes dados dos Jogadores [Dependendo de “onde esteja extraindo” os dados, existe um Id, exiba também o Id de cada Jogador]
@@ -46,13 +46,34 @@ marrom].
 - [x] RF7 - Apresentar e calcular a moda de pontos, rebotes e assistências dos jogadores. Exibir a quantidade de vezes que a moda aparece para cada item [pontos, rebotes e assistências].
     - [x] RF7 – A – Apresentar ao usuário a porcentagem de pontos, rebotes e assistências abaixo da média   
 - [x] RF8 - Apresentar o Desvio Padrão de pontos, rebotes e assistências dos jogadores. Quanto mais próximo de zero, mais agrupado em torno da média os dados estão. 
-- [ ] RF9 – O sistema deve apresentar a quantidade de pontos, assistências e rebotes de toda a carreira do jogador. 
-- [ ] RF10 – O sistema deve apresentar a quantidade de pontos, assistências e rebotes de toda a carreira 10do jogador e comparada com a atual temporada conforme a tabela.
-    - [ ] RF10 - Apresentar gráficos de desempenho dos seus jogadores [temporada atual] para compor o Dashboard do projeto: 
-                • Gráfico de distribuição de pontos por jogo em relação a média, mediana e moda 
-                • Gráfico de distribuição de rebotes por jogo em relação a média, mediana e moda 
-                • Gráfico de distribuição de assistências por jogo em relação a média, mediana e 
-                moda 
-                • Gráfico BOX PLOT de pontos, rebotes e assistências por jogo [detalhar todas as informações (Max, Min, Mediana, Outliers, etc.) possíveis nos quartis]
-- [ ] RF11 – Para cada tabela e/ou requisito que exiba dados gerados pelo sistema será necessário que os dados sejam salvos em um arquivo c.v. 
-- [ ] RF12 – Para cada gráfico gerado pelo sistema será necessário que sejam exibidos em formato  HTML e abertos no Browser. 
+- [x] RF9 – O sistema deve apresentar a quantidade de pontos, assistências e rebotes de toda a carreira do jogador. 
+
+- [x] RF10 - Apresentar gráficos de desempenho dos seus jogadores [temporada atual] para compor o Dashboard do projeto: 
+            • Gráfico de distribuição de pontos por jogo em relação a média, mediana e moda 
+            • Gráfico de distribuição de rebotes por jogo em relação a média, mediana e moda 
+            • Gráfico de distribuição de assistências por jogo em relação a média, mediana e 
+            moda 
+            • Gráfico BOX PLOT de pontos, rebotes e assistências por jogo [detalhar todas as informações (Max, Min, Mediana, Outliers, etc.) possíveis nos quartis]
+- [x] RF11 – Para cada tabela e/ou requisito que exiba dados gerados pelo sistema será necessário que os dados sejam salvos em um arquivo c.v. 
+- [x] RF12 – Para cada gráfico gerado pelo sistema será necessário que sejam exibidos em formato  HTML e abertos no Browser. 
+
+## Requisitos - Parte 3
+
+- [x] RF1 – Precisamos modelar e prever eventos extremos, assim precisamos verificar em cima dos dados que possuímos as probabilidades de ocorrência de pontuação, assistências e rebotes máximos e mínimos. Como pergunta guia responda:
+Probabilidade de marcar acima de X [pontos, rebotes, assistências]?
+Probabilidade de atingir ou exceder X [pontos, rebotes, assistências]?
+Probabilidade de atingir ou ficar abaixo de X [pontos, rebotes, assistências]?
+Proporção de valores menores ou iguais a X [pontos, rebotes, assistências]?
+Valores menores que X
+Proporção de valores menores que X
+- [x] RF2 – Apresente gráficos que facilitem a visualização dos extremos e das respostas às perguntas realizadas no RF1. Use gráficos do seu interesse.
+- [x] RF3 – Possível uso de variáveis independentes: tempo que o jogador passou em quadra, arremessos tentados e turnovers. Variáveis dependentes, pontos, assistências e rebotes. Divida os dados de teste e treinamento.
+Responda:
+As probabilidades de o jogador marcar acima e abaixo da média, mediana, moda, máximo e mínimo para pontos, rebotes e assistências.
+- [x] RF4 – Apresente gráficos que facilitem a interpretação das previsões como matriz de confusão, gráficos de probabilidade predita, curva ROC, gráficos de coeficientes, etc.
+- [x] RF5 – Possível uso de variáveis independentes: tempo que o jogador passou em quadra, arremessos tentados e turnovers. Variáveis dependentes, pontos, assistências e rebotes. Divida os dados de teste e treinamento.
+- [x] RF6 – Apresente gráficos que facilitem a interpretação das previsões, como matriz de confusão, gráficos de probabilidade predita, curva ROC, gráficos de coeficientes, etc.
+- [x] RF7 – Prever uma quantidade X [pontos, rebotes, assistências] no próximo jogo. Use a função PoissonGAM e a função LinearGAM da biblioteca pygam.
+Responda:
+As probabilidades de o jogador marcar acima e abaixo da média, mediana, moda, máximo e mínimo para pontos, rebotes e assistências, além de predizer exatamente um valor x.
+- [x] RF8 – Apresente gráficos que facilitem a interpretação das previsões, como matriz de confusão, gráficos de probabilidade predita, curva ROC, gráficos de coeficientes, etc.
